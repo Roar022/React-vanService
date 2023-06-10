@@ -1,9 +1,7 @@
 import React from "react";
-import { Navbar } from "./Navbar";
 export function Main() {
   return (
   <>
-  <Navbar/>
     <div className="main--body">
       <h1>You got the travel plans, we got the travel vans.</h1>
       <h3>

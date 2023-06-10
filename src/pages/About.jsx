@@ -1,11 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route , Routes, Link } from 'react-router-dom';
-import { Navbar } from "./Navbar";
 export function About() {
   return (
     <div className="about--page">
-      <Navbar/>
-
       <div className="about--page--image">
 
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import { Navbar } from "./Navbar";
-import Data from "./Data";
+import Data from "../Data";
 
 export function Vans() {
   // const [data, setData] = React.useState(Data);
@@ -24,7 +23,6 @@ export function Vans() {
 
   return (
     <>
-      <Navbar />
       <div className="vans--container">
         <h1>Explore our van option</h1>
         <div className="filter--buttons">

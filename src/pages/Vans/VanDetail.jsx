@@ -5,8 +5,7 @@
 
 import React from "react";
 import { useParams } from "react-router-dom";
-import Data from "./Data";
-import { Navbar } from "./Navbar";
+import Data from "../Data";
 export function VanDetail() {
   const params = useParams();
 
@@ -28,7 +27,6 @@ export function VanDetail() {
 
   return (
     <div className="van-detail-container">
-        <Navbar/>
       {data[0] ? (
         <div className="van-detail">
           <img src={data[0].imageUrl} />
