@@ -1,22 +1,51 @@
 import React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 import { DashBoard } from "../pages/Host/Dashboard";
 export function Header() {
+
+
+  const activeStyle={
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#8a4819"
+  }
   return (
     <>
       <nav className="main--nav">
-        <Link to="/" className="nav--logo">
+        <NavLink
+        style={({isActive})=>isActive?activeStyle:null}
+         to="/" 
+         className="nav--logo">
           #VANLIFE
-        </Link>
-        <div className="nav--navigation">
-          <Link to="/host">Host</Link>
+        </NavLink>
 
-          <Link to="/about" className="nav--about">
+
+        <div className="nav--navigation">
+
+          <NavLink
+          to="host"
+          className={({isActive}) => isActive ? "my-link" : null }
+          style={({isActive})=> isActive?activeStyle:null}
+          >
+            Host
+          </NavLink>
+
+          <NavLink
+          to="about"
+          className={({isActive}) => isActive ? "my-link" : null }
+          style={({isActive})=> isActive?activeStyle:null}
+          >
             About
-          </Link>
-          <Link to="/Vans" className="nav--vans">
+          </NavLink>
+
+
+          <NavLink
+          to="Vans"
+          className={({isActive}) => isActive ? "my-link" : null }
+          style={({isActive})=> isActive?activeStyle:null}
+          >
             Vans
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </>

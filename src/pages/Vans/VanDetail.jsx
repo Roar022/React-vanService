@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import Data from "../Data";
 export function VanDetail() {
   const params = useParams();
-
+  console.log(params);
   const [data, setData] = React.useState([]);
 
   React.useEffect(
