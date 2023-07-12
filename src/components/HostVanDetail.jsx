@@ -69,7 +69,7 @@ export function HostVanDetail() {
             Photos
           </NavLink>
         </div>
-        <Outlet context={{hostData}} />
+        <Outlet context={{ hostData}} />
       </div>
     </>
   );
