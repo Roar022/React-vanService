@@ -9,20 +9,20 @@ const  {hostData}  = useOutletContext();
 
 console.log(hostData);
   return (
-
+( hostData.length>0?
     <div className="hostvan--info">
       <h4>
         Name: <span>{hostData[0].name}</span>
       </h4>
       <h4>
         Category: <span>{hostData[0].type}</span>
-      </h4>
+      </h4> 
       <h4>
         Description: <span>{hostData[0].description}</span>
       </h4>
       <h4>
         Visibility: <span>Public</span>
       </h4>
-    </div>
+    </div>: ( <h2>Loading...</h2> ) )
   );
 }

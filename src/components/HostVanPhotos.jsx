@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { useOutletContext } from "react-router-dom";
+export function HostVanPhotos() {
+  const { hostData } = useOutletContext();
 
-export function HostVanPhotos(){
-    return(
-        <h2>Photos</h2>
-    )
+  return hostData.length > 0 ? (
+    <div className="info--image" >
+      <img src={`${hostData[0].imageUrl}`} alt="" />
+    </div>
+  ) : (
+    <h2>Loading...</h2>
+  );
 }
