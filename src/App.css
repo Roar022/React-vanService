@@ -120,9 +120,11 @@ width: 100%;
   text-align: center;
   justify-content: space-around;
   align-items: center;
+  text-decoration: none;
   margin: 0 0.1rem;
 }
 .filter--buttons button{
+  text-decoration: none;
   font-size: 1rem;
   border: none;
   padding: 0.8rem 0.5rem;
@@ -131,9 +133,10 @@ width: 100%;
   cursor: pointer;
 
 }
-.filter--buttons a{
+.vans--container .filter--buttons .clear--filters{
   color: black;
   text-decoration: underline;
+  background-color: whitesmoke;
 }
 
 .box--container{
@@ -203,7 +206,6 @@ margin: 1rem 4% 1rem 4%;
 .van-type.luxury:hover, .van-type.luxury.selected {
   background-color: #161616;
 }
-
 /* SOURCE :- SCRIMBA */
 
 /* FOOTER */
