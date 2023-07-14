@@ -16,7 +16,11 @@ export function Vans() {
   // const [data, setData] = React.useState(Data);
   const elementsdata = searchData.map((prev) => (
     <div className="van--tile">
-      <Link to={`${prev.id}`}>
+      <Link
+        to={`${prev.id}`}
+        // storing current state like
+        state={{ search: searchParams.toString(), type: typeFilter }}
+      >
         <img className="vans--image" src={prev.imageUrl} />
         <div className="van--info">
           <h3>{prev.name}</h3>
@@ -54,19 +58,25 @@ export function Vans() {
           <button className="clear--filters" onClick={() => setSearchParams({})}>Clear filters</button> */}
 
           <button
-            className={`van-type simple ${typeFilter === "simple" ? "selected" : ""}`}
+            className={`van-type simple ${
+              typeFilter === "simple" ? "selected" : ""
+            }`}
             onClick={() => handleFilterChange("type", "simple")}
           >
             Simple
           </button>
           <button
-            className={`van-type luxury ${typeFilter === "luxury" ? "selected" : ""}`}
+            className={`van-type luxury ${
+              typeFilter === "luxury" ? "selected" : ""
+            }`}
             onClick={() => handleFilterChange("type", "luxury")}
           >
             Luxury
           </button>
           <button
-            className={`van-type rugged ${typeFilter === "rugged" ? "selected" : ""}`}
+            className={`van-type rugged ${
+              typeFilter === "rugged" ? "selected" : ""
+            }`}
             onClick={() => handleFilterChange("type", "rugged")}
           >
             Rugged

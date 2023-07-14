@@ -7,10 +7,14 @@ import { useParams } from "react-router-dom";
 import Data from "../Data";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+
 export function VanDetail() {
   const params = useParams();
-  console.log(params);
   const [data, setData] = React.useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   React.useEffect(
     () =>
@@ -23,16 +27,24 @@ export function VanDetail() {
       ),
     [params.id]
   );
+  // if location.search is not empty then access search property otherwise null
+  const search = location.state?.search || "";
+  //  const search = location.state && location.state.search || ""
+
+  // for conditional1 rendering back button
+  const type = location.state?.type || "all";
 
   // console.log(data[0].name)
 
   return (
     <div className="van-detail-container">
+      {/* problem:- when we apply filter and move to vanDetail page and go back, it will remove filter */}
 
-{/* problem:- when we apply filter and move to vanDetail page and go back, it will remove filter */}
-
-      <Link to=".." relative="path" className="back--link">
+      {/* <Link to=".." relative="path" className="back--link">
         <BiArrowBack /> Back to van list
+      </Link> */}
+      <Link to={`..?${search}`} relative="path" className="back--link">
+        <BiArrowBack /> Back to {type} van
       </Link>
       {data[0] ? (
         <div className="van-detail">
