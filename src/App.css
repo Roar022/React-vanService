@@ -1,36 +1,31 @@
-
 /* NAVBAR STARTS */
-*{
+* {
   text-decoration: none;
   max-width: 450px;
   margin: 0;
   padding: 0;
   color: black;
 }
-.main--nav{
-  
-padding: 2rem 2rem ;
+.main--nav {
+  padding: 2rem 2rem;
   display: flex;
   /* justify-content: space-around; */
   gap: 4rem;
   align-items: center;
   background-color: wheat;
 }
-.nav--logo{
+.nav--logo {
   margin-left: 2rem 2rem;
 }
-.nav--navigation{
+.nav--navigation {
   display: flex;
   flex-basis: 70%;
   justify-content: space-around;
 }
 
-
-
-
 /* MAIN BODY */
 
-.main--body{
+.main--body {
   align-items: center;
   justify-content: center;
   text-align: left;
@@ -39,57 +34,54 @@ padding: 2rem 2rem ;
   padding: 2rem;
   background-color: black;
 }
-.main--body h1{
+.main--body h1 {
   max-width: 30rem;
   font-weight: 800;
   color: white;
-
 }
-.main--body h3{
+.main--body h3 {
   max-width: 30rem;
   color: white;
   padding-top: 2rem;
 }
-.main--body button{
+.main--body .main--link {
   margin-top: 2rem;
-  background-color: #FF8C38;
-border: none;
-padding: 1rem 1rem;
-text-align: center;
-border-radius: 0.2rem;
-width: 100%;
+  background-color: #ff8c38;
+  border: none;
+  padding: 1rem 1rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  width: 90%;
+  display: block;
 }
-
-
 
 /* About START */
-.about--page{
-  background-color:whitesmoke;
+.about--page {
+  background-color: whitesmoke;
   padding-bottom: 1rem;
 }
-.about--page img{
- padding: 6rem;
-
+.about--page img {
+  padding: 6rem;
 }
-.about--body > h1{
+.about--body > h1 {
   font-weight: 800;
   padding: 2rem 1rem;
 }
-.about--body >h3{
+.about--body > h3 {
   padding: 0rem 1rem;
 }
-.about--explore{
-  background-color: #FFCC8D;
+.about--explore {
+  background-color: #ffcc8d;
   max-width: 28rem;
   padding: 1.5rem 2rem;
   margin: 2rem 1rem;
   border-radius: 0.2rem;
   font-size: 0.8rem;
 }
-.about--explore >h1{
+.about--explore > h1 {
   max-width: 20rem;
 }
-.about--explore>button{
+.about--explore > button {
   padding: 1rem 2rem;
   margin: 1rem 0rem;
   background-color: black;
@@ -98,23 +90,22 @@ width: 100%;
   border-radius: 0.2rem;
   margin-bottom: 0;
 }
-.about--page--image{
+.about--page--image {
   background-image: url("/public/images/image55.png");
   background-size: cover;
   width: auto;
   height: 15rem;
 }
 
-
 /* -------VANS SECTION--------- */
 
-.vans--container{
+.vans--container {
   background-color: whitesmoke;
 }
-.vans--container > h1{
+.vans--container > h1 {
   padding: 2rem 1rem 1rem 1rem;
 }
-.filter--buttons{
+.filter--buttons {
   display: flex;
   width: 100%;
   text-align: center;
@@ -123,51 +114,50 @@ width: 100%;
   text-decoration: none;
   margin: 0 0.1rem;
 }
-.filter--buttons button{
+.filter--buttons button {
   text-decoration: none;
   font-size: 1rem;
   border: none;
   padding: 0.8rem 0.5rem;
-  background-color: #FFEAD0;
+  background-color: #ffead0;
   border-radius: 0.3rem;
   cursor: pointer;
-
 }
-.vans--container .filter--buttons .clear--filters{
+.vans--container .filter--buttons .clear--filters {
   color: black;
   text-decoration: underline;
   background-color: whitesmoke;
 }
 
-.box--container{
+.box--container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-.van--tile{
-max-width: 42%;
-margin: 1rem 4% 1rem 4%;
+.van--tile {
+  max-width: 42%;
+  margin: 1rem 4% 1rem 4%;
 }
-.van--tile img{
+.van--tile img {
   max-width: 100%;
   border-radius: 0.5rem;
-  }
+}
 
-.van--info{
+.van--info {
   margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.van--tile > button{
+.van--tile > button {
   padding: 0.5rem 2rem;
   border: none;
   font-size: 1rem;
-  margin-top:0.5rem;
+  margin-top: 0.5rem;
   border-radius: 0.4rem;
-  background-color: #FFCC8D;
+  background-color: #ffcc8d;
 }
 
 /* SOURCE :- SCRIMBA */
@@ -178,13 +168,13 @@ margin: 1rem 4% 1rem 4%;
   font-weight: 500;
   border: none;
   border-radius: 5px;
-  background-color: #FFEAD0;
-  color: #4D4D4D;
+  background-color: #ffead0;
+  color: #4d4d4d;
   transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .van-type:hover {
-  color: #FFEAD0;
+  color: #ffead0;
 }
 
 .van-type:focus {
@@ -192,24 +182,27 @@ margin: 1rem 4% 1rem 4%;
 }
 
 .van-type.selected {
-  color: #FFEAD0;
+  color: #ffead0;
 }
 
-.van-type.simple:hover, .van-type.simple.selected {
-  background-color: #E17654;
+.van-type.simple:hover,
+.van-type.simple.selected {
+  background-color: #e17654;
 }
 
-.van-type.rugged:hover, .van-type.rugged.selected {
-  background-color: #115E59;
+.van-type.rugged:hover,
+.van-type.rugged.selected {
+  background-color: #115e59;
 }
 
-.van-type.luxury:hover, .van-type.luxury.selected {
+.van-type.luxury:hover,
+.van-type.luxury.selected {
   background-color: #161616;
 }
 /* SOURCE :- SCRIMBA */
 
 /* FOOTER */
-footer{
+footer {
   margin: 0;
   padding: 0;
   padding: 1rem 0rem;
@@ -219,115 +212,178 @@ footer{
   color: rgb(233, 228, 228);
 }
 
-footer{
+footer {
   margin-top: auto;
 }
 /* to make footer at bottom */
-.layout{
+.layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-
-
 /* Host Layout */
-.host--layout{
-  display:flex;
+.host--layout {
+  display: flex;
   margin: 2rem 0 2rem 0rem;
   justify-content: space-around;
   text-align: center;
 }
-.host--layout a{
+.host--layout a {
   color: rgb(101, 101, 101);
 }
-.heading{
+.heading {
   margin-left: 2rem;
   margin-bottom: 0rem;
 }
 
-.hostvans--data{
+.hostvans--data {
   margin: 1rem;
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.hostvan--tile{
+.hostvan--tile {
   display: flex;
   padding: 1rem;
-  background-color: #FFCC8D;
+  background-color: #ffcc8d;
   gap: 1rem;
   align-items: center;
-  border-radius:1rem ;
+  border-radius: 1rem;
 }
-.hostvan--tile img{
+.hostvan--tile img {
   width: 25%;
 }
 
-.back--link{
+.back--link {
   margin: 1rem 0 2rem 1rem;
   align-items: center;
   justify-content: center;
 }
-.hostvan-detail--container{
+.hostvan-detail--container {
   margin: 1rem 1rem 2rem 1rem;
   background-color: rgb(235, 224, 195);
   padding: 1rem 1rem;
   border-radius: 0.5rem;
 }
 
-.hostvan--detail{
+.hostvan--detail {
   display: flex;
- /* gap: 2rem; */
+  /* gap: 2rem; */
 }
-.hostvan--detail img{
+.hostvan--detail img {
   width: 40%;
   border-radius: 0.9rem;
 }
-.hostvan--data{
+.hostvan--data {
   padding: 2rem 1rem;
 }
-.hostvan--name{
+.hostvan--name {
   margin: 1rem 0rem;
   margin-bottom: 0;
   font-weight: 600;
   font-size: 1.5rem;
 }
-.hostvan--price{
+.hostvan--price {
   font-weight: 600;
   margin: 0.5rem 0rem;
   font-size: 1.1rem;
 }
-.hostvan--price span{
+.hostvan--price span {
   font-weight: 400;
 }
 
 /* Host van detail nav */
-.host-van-detail-nav{
+.host-van-detail-nav {
   display: flex;
   gap: 2rem;
   margin: 1rem 0rem;
 }
-.host-van-detail-nav a{
+.host-van-detail-nav a {
   color: gray;
   padding: 0.5rem 0rem;
-  
 }
 
 /* HostVanPhotos */
-.info--image img{
+.info--image img {
   width: 30%;
 }
 
 /* HostVanInfo */
-.hostvan--info{
-
+.hostvan--info {
 }
-.hostvan--info h4{
+.hostvan--info h4 {
   font-size: 1rem;
   font-weight: 600;
   margin: 1rem 0rem;
 }
-.hostvan--info h4 span{
+.hostvan--info h4 span {
   font-size: 1rem;
   font-weight: 400;
+}
+
+/* NOT FOUND */
+.notfound--link {
+  margin: 1rem 1rem;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 1rem 1rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  width: 80%;
+  display: block;
+  font-weight: 600;
+}
+
+/*
+                      Login */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 1rem;
+  padding-inline: 27px;
+}
+.login-container h1 {
+  margin: 2rem 0rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-form > input {
+  border: 1px solid rgba(209, 213, 219);
+  height: 40px;
+  text-indent: 10px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+
+.login-form > input:focus {
+  outline: none;
+}
+
+.login-form > input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+
+.login-form > button {
+  background-color: #ff8c38;
+  border: none;
+  border-radius: 6px;
+  height: 55px;
+  margin-top: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
 }

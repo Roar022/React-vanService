@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, NavLink } from "react-router-dom";
 import { DashBoard } from "../pages/Host/Dashboard";
+import {CgProfile} from "react-icons/cg"
 export function Header() {
 
 
@@ -46,6 +47,9 @@ export function Header() {
           >
             Vans
           </NavLink>
+          <NavLink to="login" className="login-link">
+          <CgProfile/>
+                </NavLink>
         </div>
       </nav>
     </>

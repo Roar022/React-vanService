@@ -6,7 +6,7 @@ export function HostVans() {
 
   const elements = Data.map((prev) => (
     <div className="hostvans--data">
-      <Link to={`${prev.id}`}>
+      <Link to={prev.id}>
         <div className="hostvan--tile">
           <img src={prev.imageUrl} />
           <div className="hostvan--info">

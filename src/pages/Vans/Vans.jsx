@@ -1,11 +1,31 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import Data from "../Data";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Link,
+  useLoaderData,
+} from "react-router-dom";
+// import Data from "../Data";
 import { useSearchParams } from "react-router-dom";
+import { getVans } from "../../api";
+
+export function loader() {
+  return getVans();
+}
 
 export function Vans() {
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const [error, setError] = React.useState(null)
+  // to get data from api
+  const Data = useLoaderData();
+  // const [Data, setData] = React.useState([])
+  // React.useEffect(() => {
+  //     fetch("/api/vans")
+  //         .then(res => res.json())
+  //         .then(data => setData(data.vans))
+  // }, [])
+console.log(Data);
   // getting type like luxury, rugged
   const typeFilter = searchParams.get("type");
 
@@ -47,6 +67,9 @@ export function Vans() {
     });
   }
 
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>
+}
   return (
     <>
       <div className="vans--container">
