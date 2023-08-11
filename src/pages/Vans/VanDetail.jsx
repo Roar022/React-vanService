@@ -9,20 +9,29 @@ import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
+import "../../api";
+import { getVans } from "../../api";
+import { useLoaderData } from "react-router-dom";
+
+export function loader({params}){
+return getVans(params.id);
+}
+
+
 
 export function VanDetail() {
-  const params = useParams();
-  const [data, setData] = React.useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const params = useParams();
+  // const [data, setData] = React.useState([]);
+  // const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
-
+  const data = useLoaderData()
   // const [van, setVan] = React.useState(null)
 
-  React.useEffect(() => {
-      fetch(`/api/vans/${params.id}`)
-          .then(res => res.json())
-          .then(data => setData(data.vans))
-  }, [params.id])
+  // React.useEffect(() => {
+  //     fetch(`/api/vans/${params.id}`)
+  //         .then(res => res.json())
+  //         .then(data => setData(data.vans))
+  // }, [params.id])
   // if location.search is not empty then access search property otherwise null
   const search = location.state?.search || "";
   //  const search = location.state && location.state.search || ""
@@ -30,7 +39,7 @@ export function VanDetail() {
   // for conditional1 rendering back button
   const type = location.state?.type || "all";
 
-  console.log(data)
+  // console.log(data)
 
   return (
     <div className="van-detail-container">
@@ -42,7 +51,7 @@ export function VanDetail() {
       <Link to={`..?${search}`} relative="path" className="back--link">
         <BiArrowBack /> Back to {type} van
       </Link>
-      {data ? (
+      {/* {data ? ( */}
         <div className="van-detail">
           <img src={data.imageUrl} />
           <i className={`van-type ${data.type} selected`}>{data.type}</i>
@@ -53,9 +62,7 @@ export function VanDetail() {
           <p>{data.description}</p>
           <button className="link-button">Rent this van</button>
         </div>
-      ) : (
-        <h2>Loading...</h2>
-      )}
+      {/* ) : (<h2>Loading...</h2>)} */}
     </div>
   );
 }

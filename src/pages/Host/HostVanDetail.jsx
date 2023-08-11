@@ -1,46 +1,71 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Data from "../pages/Data";
+// import Data from "../pages/Data";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { getHostVans } from "../../api";
+import { useLoaderData } from "react-router-dom";
+import { requireAuth } from "../../utils";
+
+
+
+export async function loader({params}){
+  // console.log(params)
+  await requireAuth()
+return getHostVans(params.id)
+}
 
 export function HostVanDetail() {
-  const [hostData, setHostData] = React.useState([]);
-  const hostParam = useParams();
-  React.useEffect(
-    () =>
-      setHostData(
-        Data.filter((prev) => {
-          if (prev.id === hostParam.id) {
-            return prev;
-          }
-        })
-      ),
-    [hostParam.id]
-  );
+  // const { id } = useParams()
+  // const [hostData, setHostData] = React.useState([]);
+  // const hostParam = useParams();
+  // React.useEffect(
+  //   () =>
+  //     setHostData(
+  //       Data.filter((prev) => {
+  //         if (prev.id === hostParam.id) {
+  //           return prev;
+  //         }
+  //       })
+  //     ),
+  //   [hostParam.id]
+  // );
+//   React.useEffect(() => {
+//     fetch(`/api/host/vans/${id}`)
+//         .then(res => res.json())
+//         .then(data => setHostData(data.vans))
+// }, [])
+
+// if (!hostData) {
+//     return <h1>Loading...</h1>
+// }
+
+
+const hostData=useLoaderData();
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
     color: "black",
   };
+  // console.log(hostData)
   return (
     <>
       <Link to=".." relative="path" className="back--link">
         <BiArrowBack /> Back to van list
       </Link>
       <div className="hostvan-detail--container">
-        {hostData[0] ? (
+        {hostData ? (
           <div className="hostvan--detail">
-            <img src={hostData[0].imageUrl} />
+            <img src={hostData.imageUrl} />
             <div className="hostvan--data">
-              <i className={`van-type ${hostData[0].type} selected`}>
-                {hostData[0].type}
+              <i className={`van-type ${hostData.type} selected`}>
+                {hostData.type}
               </i>
-              <div className="hostvan--name"> {hostData[0].name} </div>
+              <div className="hostvan--name"> {hostData.name} </div>
               <div className="hostvan--price">
-                ${hostData[0].price} <span>/day</span>
+                ${hostData.price} <span>/day</span>
               </div>
             </div>
           </div>

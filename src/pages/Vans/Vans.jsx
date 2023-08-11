@@ -25,7 +25,7 @@ export function Vans() {
   //         .then(res => res.json())
   //         .then(data => setData(data.vans))
   // }, [])
-console.log(Data);
+// console.log(Data);
   // getting type like luxury, rugged
   const typeFilter = searchParams.get("type");
 
