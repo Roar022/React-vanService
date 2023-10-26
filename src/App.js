@@ -23,7 +23,7 @@ import { NotFound } from "./components/NotFound";
 import { createBrowserRouter } from "react-router-dom";
 import { createRoutesFromElements } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import Login from "./pages/Login";
+import Login, { loader as loginLoader } from "./pages/Login";
 import "./server";
 import Error from "./components/Error";
 import { requireAuth } from "./utils";
@@ -39,11 +39,10 @@ function App() {
         {/* if others route not matching than this route will run */}
         <Route index element={<Main />} />
         <Route path="about" element={<About />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login />} loader={loginLoader} />
         <Route
           path="vans"
           element={<Vans />}
-
           loader={vansLoader}
           errorElement={<Error />}
         />
@@ -57,6 +56,7 @@ function App() {
           <Route
             index
             element={<Dashboard />}
+            errorElement={<Error />}
             loader={async () => await requireAuth()}
           />
           <Route

@@ -9,12 +9,10 @@ import { getHostVans } from "../../api";
 import { useLoaderData } from "react-router-dom";
 import { requireAuth } from "../../utils";
 
-
-
-export async function loader({params}){
+export async function loader({ params }) {
   // console.log(params)
-  await requireAuth()
-return getHostVans(params.id)
+  await requireAuth();
+  return getHostVans(params.id);
 }
 
 export function HostVanDetail() {
@@ -32,18 +30,17 @@ export function HostVanDetail() {
   //     ),
   //   [hostParam.id]
   // );
-//   React.useEffect(() => {
-//     fetch(`/api/host/vans/${id}`)
-//         .then(res => res.json())
-//         .then(data => setHostData(data.vans))
-// }, [])
+  //   React.useEffect(() => {
+  //     fetch(`/api/host/vans/${id}`)
+  //         .then(res => res.json())
+  //         .then(data => setHostData(data.vans))
+  // }, [])
 
-// if (!hostData) {
-//     return <h1>Loading...</h1>
-// }
+  // if (!hostData) {
+  //     return <h1>Loading...</h1>
+  // }
 
-
-const hostData=useLoaderData();
+  const hostData = useLoaderData();
   const activeStyle = {
     fontWeight: "bold",
     textDecoration: "underline",
@@ -94,7 +91,7 @@ const hostData=useLoaderData();
             Photos
           </NavLink>
         </div>
-        <Outlet context={{ hostData}} />
+        <Outlet context={{ hostData }} />
       </div>
     </>
   );

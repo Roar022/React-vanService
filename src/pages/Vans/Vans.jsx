@@ -15,8 +15,9 @@ export function loader() {
 }
 
 export function Vans() {
+  // built in react hook while URLSearchParams built in is JS object
   const [searchParams, setSearchParams] = useSearchParams();
-  const [error, setError] = React.useState(null)
+  const [error, setError] = React.useState(null);
   // to get data from api
   const Data = useLoaderData();
   // const [Data, setData] = React.useState([])
@@ -25,7 +26,7 @@ export function Vans() {
   //         .then(res => res.json())
   //         .then(data => setData(data.vans))
   // }, [])
-// console.log(Data);
+  // console.log(Data);
   // getting type like luxury, rugged
   const typeFilter = searchParams.get("type");
 
@@ -34,11 +35,12 @@ export function Vans() {
     : Data;
 
   // const [data, setData] = React.useState(Data);
-  const elementsdata = searchData.map((prev) => (
+  const elementsdata = searchData.map((prev) =>  
+    (
     <div className="van--tile">
       <Link
         to={`${prev.id}`}
-        // storing current state like
+        // storing current state like in location in loaction
         state={{ search: searchParams.toString(), type: typeFilter }}
       >
         <img className="vans--image" src={prev.imageUrl} />
@@ -53,7 +55,7 @@ export function Vans() {
         <i className={`van-type ${prev.type} selected`}>{prev.type}</i>
       </Link>
     </div>
-  ));
+));
 
   // to set param in url
   function handleFilterChange(key, value) {
@@ -68,8 +70,8 @@ export function Vans() {
   }
 
   if (error) {
-    return <h1>There was an error: {error.message}</h1>
-}
+    return <h1>There was an error: {error.message}</h1>;
+  }
   return (
     <>
       <div className="vans--container">

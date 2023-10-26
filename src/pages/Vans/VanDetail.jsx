@@ -25,6 +25,7 @@ export function VanDetail() {
   // const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const data = useLoaderData()
+  // console.log(location)
   // const [van, setVan] = React.useState(null)
 
   // React.useEffect(() => {
@@ -49,7 +50,7 @@ export function VanDetail() {
         <BiArrowBack /> Back to van list
       </Link> */}
       <Link to={`..?${search}`} relative="path" className="back--link">
-        <BiArrowBack /> Back to {type} van
+        <BiArrowBack/> Back to {type} van
       </Link>
       {/* {data ? ( */}
         <div className="van-detail">
